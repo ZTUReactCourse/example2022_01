@@ -1,3 +1,5 @@
+# Лекція 03. Приклад створення компонента "Counter" (лічильник)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
