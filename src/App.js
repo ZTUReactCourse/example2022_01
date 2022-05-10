@@ -3,6 +3,9 @@ import './App.css';
 import {Counter} from "./components/Counter";
 import {Clock} from "./components/Clock";
 import {Component} from "react";
+import {List} from "./components/List";
+import {ManagedComponent} from "./components/ManagedComponent";
+import {UnmanagedComponent} from "./components/UnmanagedComponent";
 
 export default class App extends Component {
     constructor(props) {
@@ -11,6 +14,29 @@ export default class App extends Component {
             isClockVisible: true
         };
         this.toggleButton = this.toggleButton.bind(this);
+        this.list = [
+            {
+                id: 1,
+                href: 'http://google.com.ua',
+                text: 'Google 1'
+            }, {
+                id: 2,
+                href: 'http://google.com.ua',
+                text: 'Google 2'
+            }, {
+                id: 3,
+                href: 'http://google.com.ua',
+                text: 'Google 3'
+            },{
+                id: 4,
+                href: 'http://google.com.ua',
+                text: 'Google 4'
+            },{
+                id: 5,
+                href: 'http://google.com.ua',
+                text: 'Google 5'
+            }
+        ];
     }
 
     toggleButton() {
@@ -28,13 +54,20 @@ export default class App extends Component {
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
+                    <List list={this.list} />
+                    <ManagedComponent />
+                    <UnmanagedComponent
+                        firstName="Ivan"
+                        city="2"
+                        biography="Some text"
+                    />
                     <button onClick={this.toggleButton}>
                         {
                             this.state.isClockVisible ? 'Hide' : 'Show'
                         }
                     </button>
                     {this.state.isClockVisible &&
-                        <Clock />
+                        <Clock/>
                     }
                     <Counter/>
                     <Counter value={2} min={-5} max={5}/>
