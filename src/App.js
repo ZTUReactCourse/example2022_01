@@ -6,6 +6,7 @@ import {Component} from "react";
 import {List} from "./components/List";
 import {ManagedComponent} from "./components/ManagedComponent";
 import {UnmanagedComponent} from "./components/UnmanagedComponent";
+import {FunctionalCounter} from "./components/FunctionalCounter";
 
 export default class App extends Component {
     constructor(props) {
@@ -54,6 +55,7 @@ export default class App extends Component {
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
+                    <FunctionalCounter min={0} max={20} />
                     <List list={this.list} />
                     <ManagedComponent />
                     <UnmanagedComponent
